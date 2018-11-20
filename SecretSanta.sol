@@ -23,11 +23,9 @@ contract Secretsanta{
     - address
     - anything the person should know about you to get you the best gift ever 
     
-    Please keep gifts 
-    
-    You can call this function multiple times using the same address, to update the info you put in.
-    
     MAKE SURE IT HAS AN EMAIL
+    you cannot update this info.
+    
     */
     
     function join(string _data) public{
@@ -42,7 +40,10 @@ contract Secretsanta{
     /*allow owner to close signups 
     * emit events for who has who.
     * we will watch contract for events and parse out your email.
-    * then
+    * then send you a notification with the info on the person you shoudl give a gift to.
+    
+    * This is done offchain so we can give each other mugs with bad crypto jokes on them
+    * like "I was told there would be lambos"
     */ 
     function announce() public {
         require(msg.sender == owner);
